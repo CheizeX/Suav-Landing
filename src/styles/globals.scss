@@ -1,0 +1,222 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  // font-family: splash, sans-serif;
+  font-family: poppins, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.spot {
+  width: 6px;
+  height: 6px;
+  background-color: #00bfcc;
+  border-radius: 50%;
+  position: absolute;
+  left: 27px;
+  top: 9px;
+}
+.little-spot {
+  width: 3px;
+  height: 3px;
+  background-color: #00bfcc;
+  border-radius: 50%;
+  margin-right: 3px;
+  position: relative;
+  bottom: 1px;
+}
+
+.overflowHideScroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.color {
+  color: #00bfcc;
+}
+.outlineno::selection {
+  /* sacar el borde del input */
+  background: transparent;
+}
+.change-carousel {
+  & :nth-child(3),
+  & :nth-child(4) {
+    & > button {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      & > span {
+        background-color: white;
+        height: 20px;
+        width: 20px;
+
+        & > svg {
+          color: #0f0f0f;
+          height: 14px;
+          width: 14px;
+          & > path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+  }
+  & :nth-child(2) {
+    & > button {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      & > span {
+        background-color: white;
+        height: 20px;
+        width: 20px;
+        & > svg {
+          color: #0f0f0f;
+          height: 14px;
+          width: 14px;
+          & > path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+.shadowModal {
+  box-shadow: 0px -2px 15px -5px rgba(0, 0, 0, 0.4);
+}
+
+.customSlider {
+  max-width: 300px;
+  margin: auto;
+}
+
+.customSlider-track {
+  top: 8px;
+  height: 4px;
+  background: var(--track-color);
+}
+
+.customSlider-track.customSlider-track-0 {
+  background: var(--main-color);
+}
+
+.customSlider-thumb {
+  cursor: pointer;
+  /*color for the thumb */
+  background: var(--main-color);
+  /* shape of the thumb: circle */
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  /* remove default outline when selected */
+  outline: none;
+}
+
+.customSlider-thumb:hover {
+  box-shadow: 0 0 0 8px var(--main-color-hover);
+}
+
+.customSlider-mark {
+  cursor: pointer;
+  top: 6px;
+  width: 1.5px;
+  height: 8px;
+  background-color: var(--mark-color);
+}
+
+.customSlider-mark.customSlider-mark-before {
+  background-color: var(--main-color);
+}
+
+.customSlider-mark.customSlider-mark-active {
+  display: none;
+}
+
+.input-cont {
+  input[type='range'] {
+    -webkit-appearance: none;
+    // margin-right: 15px;
+    width: 100%;
+    height: 4px;
+    background: rgba(38, 37, 37, 0.2);
+    border-radius: 5px;
+    background-image: linear-gradient(#00bfcc, #00beccb8);
+    background-repeat: no-repeat;
+  }
+
+  /* Input Thumb */
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #00bfcc;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #00bfcc;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+  }
+
+  input[type='range']::-ms-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #00bfcc;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+  }
+
+  /* Input Track */
+  input[type='range']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  input[type='range']::-moz-range-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  input[type='range']::-ms-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}

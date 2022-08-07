@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        splash: ['Splash', 'sans-serif'],
       },
       colors: {
         gray_p: '#EDEDED',
@@ -18,6 +19,8 @@ module.exports = {
         gray_4: '#777777',
         gray_5: '#2B2B2B',
         turquoise: '#00BFCC',
+        btn_1: '#FF00FF',
+        btn_2: '#05EFFF',
       },
     },
   },

@@ -21,6 +21,7 @@ a {
 
 * {
   box-sizing: border-box;
+  color: '#2B2B2B';
 }
 
 .spot {
@@ -31,6 +32,9 @@ a {
   position: absolute;
   left: 27px;
   top: 9px;
+}
+.index {
+  z-index: 10;
 }
 .little-spot {
   width: 3px;
@@ -122,13 +126,10 @@ a {
 
 .customSlider-thumb {
   cursor: pointer;
-  /*color for the thumb */
   background: var(--main-color);
-  /* shape of the thumb: circle */
   width: 20px;
   height: 20px;
   border-radius: 100%;
-  /* remove default outline when selected */
   outline: none;
 }
 

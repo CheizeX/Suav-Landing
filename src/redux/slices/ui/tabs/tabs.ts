@@ -4,13 +4,15 @@ export enum IActiveTabsProps {
   STYLIST = 'Stylist',
   STYLES = 'Styles',
   SESSIONS = 'Sessions',
+  NEEDSTYLIST = 'NeedStylist',
+  PROVIDESERVICE = 'ProvideService',
 }
 interface SelectedTabInterface {
   activeTabInState: string;
 }
 
 const initialState: SelectedTabInterface = {
-  activeTabInState: 'Stylist',
+  activeTabInState: 'NeedStylist',
 };
 
 export const activeTabInState = createSlice({

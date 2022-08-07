@@ -1,37 +1,29 @@
-import { FC } from 'react';
-import { GrLocation } from 'react-icons/gr';
+import Image from 'next/image';
+import { FC, useState } from 'react';
+import { ButtonMolecule, ButtonVariant, Size } from '../shared/Button/Button';
+import { Twirl as Hamburger } from 'hamburger-react'
 
 export const Navbar: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="container h-[75px] w-full min-w[320px] border-b border-b-gray_p p-[18px] flex justify-between items-center">
-      <div className="border-r h-[27px] w-[172px] flex items-center text-[12px] color font-bold">
-        <div className="border rounded-full h-full w-[27px] mr-6" />
-        SUAV BEAUTY
-      </div>
-
-      {/* hidden on md, hamburguer menu */}
-      <div className=" h-[27px] w-[172px] flex items-center relative md:hidden">
-        <GrLocation className="location-icon mr-2 ml-[22px]" />
-        <div className="spot" />
-        {/* <select className="w-[90px] text-[10px] border-none m-0 p-0" disabled>
-          <option value="1">Set Location</option>
-          <option value="1">Rosario</option>
-          <option value="2">Buenos Aires</option>
-        </select> */}
-      </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6 md:hidden"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </nav>
+    <div className='w-screen flex justify-center shadow h-[75px] fixed top-0 left-0 z-30 bg-white'>
+      <nav className="h-[75px] w-full max-w-[1366px] min-w[320px] px-[60px] p-[18px] flex justify-between items-center opacity-[0.96]">
+        <div className='flex items-center justify-center min-w-[220px]'>
+          <Image src="/images/logo.png" alt="logo" width={220} height={40} loading={'lazy'} />
+        </div>
+        <ul className='flex items-center justify-end w-full gap-12 text-[16px] ' >
+          {['Blogs', 'Find a Stylist', 'Become a Stylist'].map((item) => (
+            <button type='button' key={item} className='min-w-fit hover:cursor-pointer hover:opacity-50 hover:text-turquoise active:opacity-100 text-gray_5' onClick={() => console.log(`${item}`)}>
+              {item}
+            </button>
+          ))}
+          {/* <Hamburger toggle={setIsOpen} toggled={isOpen} size={32} color="#2B2B2B" easing="ease-in" rounded label="Show menu" hideOutline={false} /> */}
+          <div className='flex items-center gap-5'>
+            <ButtonMolecule size={Size.LARGE} text="Login" type="button" variant={ButtonVariant.OUTLINED} />
+            <ButtonMolecule size={Size.LARGE} text="Sign Up" type="button" />
+          </div>
+        </ul>
+      </nav >
+    </div>
   );
 };

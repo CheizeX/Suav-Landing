@@ -13,13 +13,15 @@ import {
   IFiltersProps,
   TCurrentSection,
 } from '../components/Filters/filters.interface';
+import { Hero } from '../components/Hero/Hero';
+import { SecondSection } from '../components/SecondSection/SecondSection';
+import { DiscoverSection } from '../components/DiscoverSection/DiscoverSection';
 
 const Home: NextPage<IFiltersProps> = () => {
   const { activeTabInState } = useAppSelector((state) => state.ui);
 
   const topCatalogueRef = useRef<HTMLDivElement>(null);
 
-  const [activeModal, setActiveModal] = useState('');
   const [filters, setFilters] = useState<IFiltersProps>({
     currentSection: TCurrentSection.HOME,
     byPrice: '0',
@@ -39,8 +41,11 @@ const Home: NextPage<IFiltersProps> = () => {
         <title>SUAV BEAUTY LANDING</title>
         <meta name="description" content="landing page" />
       </Head>
-      <main className="container flex flex-col justify-start items-center w-full min-w-[320px] max-w-[1366px] h-full border relative">
+      <main className="container flex flex-col justify-start items-center w-full min-w-[320px] max-w-[1366px] h-full relative">
         <Navbar />
+        <Hero />
+        <SecondSection />
+        <DiscoverSection />
       </main>
     </>
   );

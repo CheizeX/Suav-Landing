@@ -70,7 +70,7 @@ const loadingCss = css<{ bgColor?: string }>`
     cursor: not-allowed;
     opacity: 1;
     background-color: ${({ bgColor }) =>
-    bgColor && bgColor !== '' ? bgColor : '#f5f5f5ac'};
+      bgColor && bgColor !== '' ? bgColor : '#f5f5f5ac'};
   }
 `;
 
@@ -78,7 +78,8 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
   transition: all 0.2s ease-in-out;
   border-radius: 13px;
   border: solid 3px transparent;
-  background-image: linear-gradient(#FF00FF, #05EFFF), linear-gradient(248deg, #FF00FF, #05EFFF);
+  background-image: linear-gradient(#ff00ff, #05efff),
+    linear-gradient(248deg, #ff00ff, #05efff);
   background-origin: border-box;
   background-clip: content-box, border-box;
   -webkit-background-clip: content-box, border-box;
@@ -90,11 +91,12 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
   & span {
     transition: all 0.2s ease-in-out;
     background-origin: border-box;
-    background-clip:  border-box;
-    background: transparent linear-gradient(108deg, #FF00FF 0%, #05EFFF 100%) 0% 0% no-repeat padding-box;
+    background-clip: border-box;
+    background: transparent linear-gradient(108deg, #ff00ff 0%, #05efff 100%) 0%
+      0% no-repeat padding-box;
     background-size: 100% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   &:hover {
     transition: all 1s ease-in-out;
@@ -112,12 +114,13 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
     animation: animatedgradient 3s ease infinite;
     & span {
       transition: all 0.2s ease-in-out;
-    background-origin: border-box;
-    background-clip:  border-box;
-    background: transparent linear-gradient(108deg, #05EFFF 0%, #FF00FF 100%) 0% 0% no-repeat padding-box;
-    background-size: 100% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+      background-origin: border-box;
+      background-clip: border-box;
+      background: transparent linear-gradient(108deg, #05efff 0%, #ff00ff 100%)
+        0% 0% no-repeat padding-box;
+      background-size: 100% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   &:active {
@@ -136,19 +139,25 @@ export const StyledButton = styled.button<ButtonProps>`
   background-size: 100% auto;
   color: white;
   border-radius: 10px;
-  background-image: linear-gradient(98deg, #D95AFF 0%, #05EFFF 100%);
+  background-image: linear-gradient(98deg, #d95aff 0%, #05efff 100%);
   height: 50px;
   width: 130px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Plus Jakarta Display';
   ${({ size }) => (size === Size.SMALL ? `height: 32px;` : null)}
   ${({ size }) => (size === Size.MEDIUM ? `height: 40px;` : null)}
-  ${({ size }) => (size === Size.LARGE ? `height: 48px; max-width: 130px;` : null)}
-  ${({ size }) => (size === Size.FULL ? `min-width: 100%; height:100%; max-height: 70px; font-size: 18px; border-radius: 13px;` : null)}
+  ${({ size }) =>
+    size === Size.LARGE ? `height: 48px; max-width: 130px;` : null}
+  ${({ size }) =>
+    size === Size.FULL
+      ? `min-width: 100%; height:100%; max-height: 70px; font-size: 18px; border-radius: 13px;`
+      : null}
   &:hover {
     background-size: 500% auto;
     background-position: right center;
-    ${({ size }) => (size === Size.FULL ? `box-shadow: 0px 1px 3px 0px #b2b2b2;` : null)}
+    ${({ size }) =>
+      size === Size.FULL ? `box-shadow: 0px 1px 3px 0px #b2b2b2;` : null}
   }
   &:active {
   }
@@ -185,7 +194,7 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
       size={size}
       bgColor={bgColor ?? ''}
       disabled={state === ButtonState.DISABLED || state === ButtonState.LOADING}
-      onClick={onClick ?? (() => { })}
+      onClick={onClick ?? (() => {})}
       $loading={state === ButtonState.LOADING}>
       {leftIcon && leftIcon()}
       <span
@@ -203,6 +212,3 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
     </StyledButton>
   );
 };
-
-
-

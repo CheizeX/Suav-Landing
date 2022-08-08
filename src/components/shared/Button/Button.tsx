@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+import React from 'react';
 
 import { FC, MouseEventHandler } from 'react';
 import styled, { css } from 'styled-components';
@@ -141,7 +143,7 @@ export const StyledButton = styled.button<ButtonProps>`
   ${({ size }) => (size === Size.SMALL ? `height: 32px;` : null)}
   ${({ size }) => (size === Size.MEDIUM ? `height: 40px;` : null)}
   ${({ size }) => (size === Size.LARGE ? `height: 48px; max-width: 130px;` : null)}
-  ${({ size }) => (size === Size.FULL ? `min-width: 100%; max-height: 70px; font-size: 18px; border-radius: 13px;` : null)}
+  ${({ size }) => (size === Size.FULL ? `min-width: 100%; height:100%; max-height: 70px; font-size: 18px; border-radius: 13px;` : null)}
   &:hover {
     background-size: 500% auto;
     background-position: right center;

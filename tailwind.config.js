@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        splash: ['Splash', 'sans-serif'],
+        jakarta: ['Plus Jakarta Display', 'sans-serif'],
+        northwell: ['Northwell', 'cursive'],
       },
       colors: {
         gray_p: '#EDEDED',

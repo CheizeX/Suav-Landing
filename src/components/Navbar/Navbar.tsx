@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { ButtonMolecule, ButtonVariant, Size } from '../shared/Button/Button';
-import { Twirl as Hamburger } from 'hamburger-react'
+// import { Twirl as Hamburger } from 'hamburger-react'
 
 export const Navbar: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='w-screen flex min-w-[1080px] justify-center shadow h-[75px] fixed top-0 left-0 z-30 bg-white'>
       <nav className="h-[75px] w-full min-w-[1080px] max-w-[1366px] min-w[320px] px-[60px] p-[18px] flex justify-between items-center opacity-[0.96]">

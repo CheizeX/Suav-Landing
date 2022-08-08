@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export enum IActiveTabsProps {
@@ -19,7 +20,10 @@ export const activeTabInState = createSlice({
   name: 'activeTabInState',
   initialState,
   reducers: {
-    setUiActiveTab: (state, action: PayloadAction<string>) => {
+    setUiActiveTab: (
+      state: { activeTabInState: string },
+      action: PayloadAction<string>,
+    ) => {
       state.activeTabInState = action.payload;
     },
   },

@@ -1,6 +1,5 @@
 import React from 'react';
 import { HiOutlineSearch } from 'react-icons/hi';
-import { MdLocationPin } from 'react-icons/md';
 
 export const Search = () => {
   return (

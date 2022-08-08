@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAppSelector } from '../../redux/hook/hooks';
-import activeTabInState, { setUiActiveTab } from '../../redux/slices/ui/tabs/tabs';
+import { setUiActiveTab } from '../../redux/slices/ui/tabs/tabs';
 import { ButtonMolecule, Size } from '../shared/Button/Button';
 import { Search } from './components/Search/Search';
 

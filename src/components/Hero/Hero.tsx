@@ -11,8 +11,11 @@ export const Hero: FC = () => {
   const { activeTabInState } = useAppSelector((state) => state.ui);
 
   return (
-    <section className=" h-[658px] w-screen max-w-[1366px] flex justify-between items-center">
-      <div className=" w-[53%] h-full flex flex-col justify-center pl-[50px]">
+    <section className=" h-[658px] w-screen max-w-[1366px] flex justify-between items-center overflow-hidden">
+      <div className="relative w-[53%] h-full flex flex-col justify-center pl-[50px]">
+        <div className="-z-10 absolute w-[1000px] h-[500px] transform-gpu translate-x-[-200px] translate-y-[150px] origin-left -rotate-[45deg] rounded-[650px] overflow-hidden ">
+          <div className=" w-full h-full bg-[url('/images/hero-background.png')] bg-cover"></div>
+        </div>
         <div className="w-[340px] h-[57px] flex justify-around items-center rounded-[10px] bg-gray_1">
           {['Need Stylist', 'Provide Service'].map((item) => (
             <button
@@ -31,7 +34,7 @@ export const Hero: FC = () => {
         </div>
         <h1 className="mt-[45px] max-w-[620px] ml-[20px] text-[35px] text-gray_5 font-semibold">
           An
-          <span className="h-fit ml-[20px] mr-[20px] pr-2 text-[44px] text-btn_1 font-northwell font-[200] transform-gpu rotate-45">
+          <span className="max-h-[40px] ml-[20px] mr-[20px] pr-2 text-[59px] text-btn_1 font-northwell font-[200] transform-gpu rotate-45">
             individual
           </span>
           lifetime experience anytime, anywhere.
@@ -71,7 +74,7 @@ export const Hero: FC = () => {
             />
           </div>
         </div>
-        <div className="bg-white shadow rounded-2xl w-[100%] max-w-[520px] h-[298px] flex flex-col gap-7 justify-evenly p-4 mx-auto">
+        <div className="bg-[url('/images/hero-background.png')] bg-white bg-cover shadow rounded-2xl w-[100%] max-w-[520px] h-[298px] flex flex-col gap-7 justify-evenly p-4 mx-auto">
           <div className="flex flex-col gap-4">
             <Search />
             <Search />

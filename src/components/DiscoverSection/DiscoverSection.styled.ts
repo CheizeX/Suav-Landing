@@ -1,14 +1,9 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const StyledSlider = styled.div`
+export const StyledSlider = styled(motion.div)`
   width: 100%;
   min-height: 385px;
-  padding: 2px 0;
-  overflow-x: scroll;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-x: repeat(100%);
   margin-left: 54px;
   margin-top: 40px;
   display: flex;
@@ -28,6 +23,8 @@ export const StyledImageWrapper = styled.div`
   min-width: 382px;
   min-height: 382px;
   position: relative;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 27px;
 `;
 
 export const StyledOverImage = styled.div`

@@ -23,6 +23,8 @@
     "react-hooks"
   ],
   "rules": {
+    "no-undefined": "warn",
+    "no-unused-vars": "warn",
     "consistent-return": "off",
     "func-names": 0,
     "no-underscore-dangle": 0,

@@ -1,61 +1,54 @@
 import Image from 'next/image';
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { HiBriefcase } from 'react-icons/hi';
 import { ButtonMolecule, Size } from '../shared/Button/Button';
+import { DiscoverSectionItems } from './DiscoverSection.shared';
 import { StyledImageWrapper, StyledOverImage, StyledSlider } from './DiscoverSection.styled';
-
+import { TbLivePhoto } from 'react-icons/tb';
 
 export const DiscoverSection: FC = () => {
   const [favorites, setFavorites] = useState(['']);
-  const [images, setImages] = useState([
-    {
-      src: '/images/discover-1.png',
-      id: '1',
-      header: 'Bella ck',
-      from: 'Cape Town, South Africa',
-    },
-    {
-      src: '/images/discover-2.png',
-      id: '2',
-      header: 'Ashley kit',
-      from: 'Cape Town, South Africa',
-    },
-    {
-      src: '/images/discover-3.png',
-      id: '3',
-      header: 'Ashley kit',
-      from: 'Cape Town, South Africa',
-    },
-    {
-      src: '/images/discover-4.png',
-      id: '4',
-      header: 'Sohan',
-      from: 'Cape Town, South Africa',
-    },
-  ]);
+  const [moveSlider, setMoveSlider] = useState(0);
 
-  // const [currentSlide, setCurrentSlide] = useState(0);
+  const calculateSliderWidth = DiscoverSectionItems.length > 4
+    ? -(((DiscoverSectionItems.length * 382) + (DiscoverSectionItems.length * 16)) / 2 + 100)
+    : -(DiscoverSectionItems.length * 382) / 2 + 100;
 
-  // const handleNextSlide = () => {
-  //   let newSlide = currentSlide === images.length - 1 ? 0 : currentSlide + 1;
-  //   setCurrentSlide(newSlide);
-  // };
+  const memoSlider = useCallback((direction: string) => {
+    if (direction === 'left' && moveSlider < 0) {
+      setMoveSlider(moveSlider + 398);
+    } else if (direction === 'right' && moveSlider > calculateSliderWidth) {
+      setMoveSlider(moveSlider - 398);
+    }
+  }, [moveSlider, calculateSliderWidth]);
 
-  // const handlePrevSlide = () => {
-  //   let newSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
-  //   setCurrentSlide(newSlide);
-  // };
   return (
     <section className='h-[750px] w-screen max-w-[1366px] flex flex-col justify-between items-center overflow-x-hidden'>
       <div className='w-full ml-[54px] '>
         <h1 className='text-[35px] text-gray_5 font-semibold'>Discover Stylist on Suav</h1>
       </div>
-      <StyledSlider>
+      <StyledSlider
+        // drag='x'
+        dragConstraints={{
+          right: 0,
+          left: calculateSliderWidth,
+        }}
+        dragElastic={0.5}
+      // onDragEnd={(e: any) => {
+      //   setMoveSlider(e.target.scrollLeft);
+      // }}
+      >
         {
-          images.map((item) =>
+          DiscoverSectionItems.map((item) =>
           (
-            <StyledImageWrapper key={item.id}>
+            <StyledImageWrapper
+              key={item.id}
+              style={{
+                transform: `translateX(${moveSlider}px)`,
+                transition: `transform ${1}s ease-in-out`,
+              }}>
               <StyledOverImage>
                 <div className='w-full h-[50px] flex items-end justify-end px-6'>
                   {
@@ -81,7 +74,7 @@ export const DiscoverSection: FC = () => {
                   <h2 className='text-[15px] font-[400] '>{item.from}</h2>
                   <h3 className='text-[15px] font-[400] flex items-end gap-2 pt-4'>
                     <HiBriefcase size={24} />
-                    {item.from}
+                    {item.profession}
                   </h3>
                 </div>
               </StyledOverImage>
@@ -98,10 +91,12 @@ export const DiscoverSection: FC = () => {
           )
         }
       </StyledSlider>
-      <div>
-        <Image src="/images/discover.png" alt="discover" width={466} height={195} loading={'lazy'} />
+      <div className='w-full h-[60px] flex items-center justify-center gap-5'>
+        <BsArrowLeft size={32} onClick={() => memoSlider('left')} className='hover:text-gray_5 hover:cursor-pointer text-gray_3' />
+        <TbLivePhoto size={16} className='text-gray_3' />
+        <BsArrowRight size={32} onClick={() => memoSlider('right')} className='hover:text-gray_5 hover:cursor-pointer text-gray_3' />
       </div>
-      <div className='border w-[200px] h-[80px]'>
+      <div className='w-[200px] h-[60px]'>
         <ButtonMolecule text='Explore all stylists' size={Size.FULL} />
       </div>
     </section >

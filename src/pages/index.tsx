@@ -6,6 +6,8 @@ import { Hero } from '../components/sections/Hero/Hero';
 import { SecondSection } from '../components/sections/SecondSection/SecondSection';
 import { DiscoverSection } from '../components/sections/DiscoverSection/DiscoverSection';
 import { AdvantagesSection } from '../components/sections/AdvantagesSection/AdvantagesSection';
+import { OurBlogSection } from '../components/sections/OurBlogSection/OurBlogSection';
+import { Footer } from '../components/Footer/Footer';
 
 const Home: NextPage<IFiltersProps> = () => {
   return (
@@ -14,12 +16,14 @@ const Home: NextPage<IFiltersProps> = () => {
         <title>SUAV BEAUTY LANDING</title>
         <meta name="description" content="landing page" />
       </Head>
-      <main className="container flex flex-col justify-start items-center w-full min-w-[1080px]  h-full border relative">
+      <main className="container flex flex-col justify-start items-center w-full min-w-[1080px] h-fit relative">
         <Navbar />
         <Hero />
         <SecondSection />
         <DiscoverSection />
         <AdvantagesSection />
+        <OurBlogSection />
+        <Footer />
       </main>
     </>
   );

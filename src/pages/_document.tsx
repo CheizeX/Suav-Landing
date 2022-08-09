@@ -9,15 +9,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap"
           rel="stylesheet"
         />
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=Splash&display=swap"
-          rel="stylesheet"
-        /> */}
-        {/* <link
-          href="https://db.onlinewebfonts.com/c/a6db4fb3cf727e10e461d11f5b3349f0?family=Northwell"
-          rel="stylesheet"
-          type="text/css"
-        /> */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css"

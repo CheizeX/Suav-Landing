@@ -50,11 +50,7 @@ export const DiscoverSection: FC = () => {
           right: 0,
           left: calculateSliderWidth,
         }}
-        dragElastic={0.5}
-        // onDragEnd={(e: any) => {
-        //   setMoveSlider(e.target.scrollLeft);
-        // }}
-      >
+        dragElastic={0.5}>
         {DiscoverSectionItems.map((item) => (
           <StyledImageWrapper
             key={item.id}

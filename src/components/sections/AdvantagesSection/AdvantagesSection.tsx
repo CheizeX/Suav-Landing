@@ -12,7 +12,7 @@ export const AdvantagesSection: FC = () => {
       <div className=" w-full font-semibold text-[35px] text-gray_5">
         Why choose Suav?
       </div>
-      <div className="w-[full] h-[745px] bg-[#120507] my-[54px] rounded-[40px] flex flex-col items-end justify-between p-[40px]">
+      <div className="w-[full] h-[745px] bg-[#120507] my-[54px] rounded-[40px] flex flex-col items-end justify-between p-[40px] bgmio">
         <div className="w-[60%] min-h-[190px] p-[24px] rounded-[35px] bg-gray_1 flex flex-col justify-evenly">
           <h3 className="text-[22px] text-gray_5 font-semibold">
             Discover & book stylists near you

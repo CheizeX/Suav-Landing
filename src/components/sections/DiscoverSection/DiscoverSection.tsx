@@ -41,7 +41,7 @@ export const DiscoverSection: FC = () => {
     <section className="min-h-[900px] w-full max-w-[1366px] flex flex-col justify-between items-center overflow-x-hidden py-14">
       <div className="w-full ml-[54px] ">
         <h1 className="text-[35px] text-gray_5 font-semibold">
-          Discover Stylist on Suav
+          Discover stylists on Suav
         </h1>
       </div>
       <StyledSlider
@@ -50,11 +50,7 @@ export const DiscoverSection: FC = () => {
           right: 0,
           left: calculateSliderWidth,
         }}
-        dragElastic={0.5}
-        // onDragEnd={(e: any) => {
-        //   setMoveSlider(e.target.scrollLeft);
-        // }}
-      >
+        dragElastic={0.5}>
         {DiscoverSectionItems.map((item) => (
           <StyledImageWrapper
             key={item.id}

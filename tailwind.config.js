@@ -13,6 +13,7 @@ module.exports = {
         northwell: ['Northwell', 'cursive'],
       },
       colors: {
+        gray_0: '#FFFFFF',
         gray_p: '#EDEDED',
         gray_1: '#F0F0F0',
         gray_2: '#E2E2E2',

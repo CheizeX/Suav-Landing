@@ -10,6 +10,7 @@ export enum Size {
   MEDIUM = 'MEDIUM',
   LARGE = 'LARGE',
   FULL = 'FULL',
+  FULLWITHSMALLFONT = 'FULLWITHSMALLFONT',
 }
 
 export enum ButtonState {
@@ -152,6 +153,10 @@ export const StyledButton = styled.button<ButtonProps>`
   ${({ size }) =>
     size === Size.FULL
       ? `min-width: 100%; height:100%; max-height: 70px; font-size: 18px; border-radius: 13px;`
+      : null}
+  ${({ size }) =>
+    size === Size.FULLWITHSMALLFONT
+      ? `min-width: 100%; height:100%; max-height: 70px; font-size: 12px; border-radius: 13px;`
       : null}
   &:hover {
     background-size: 500% auto;

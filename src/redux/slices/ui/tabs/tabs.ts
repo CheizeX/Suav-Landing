@@ -13,7 +13,7 @@ interface SelectedTabInterface {
 }
 
 const initialState: SelectedTabInterface = {
-  activeTabInState: 'NeedStylist',
+  activeTabInState: 'Need Stylist',
 };
 
 export const activeTabInState = createSlice({

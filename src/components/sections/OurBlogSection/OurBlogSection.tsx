@@ -5,8 +5,8 @@ import { ourBlogItems, ourBlogItems2 } from './OurBlogSection.shared';
 import { useAppSelector } from '../../../redux/hook/hooks';
 import styled from 'styled-components';
 interface Props {
-  top: number;
-  left: number;
+  top?: number;
+  left?: number;
 }
 
 const StyledImageContainer = styled(motion.div)<Props>`

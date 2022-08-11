@@ -45,7 +45,6 @@ export const DiscoverSection: FC = () => {
         </h1>
       </div>
       <StyledSlider
-        // drag='x'
         dragConstraints={{
           right: 0,
           left: calculateSliderWidth,

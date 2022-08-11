@@ -12,8 +12,8 @@ export const Hero: FC = () => {
   const { activeTabInState } = useAppSelector((state) => state.ui);
 
   return (
-    <section className=" min-h-[758px] w-screen max-w-[1366px] flex justify-between items-center overflow-hidden">
-      <div className="relative w-[53%] h-full flex flex-col justify-center pl-[50px]">
+    <section className=" min-h-[758px] pt-[75px] w-screen max-w-[1366px] flex justify-between items-start overflow-hidden">
+      <div className="relative w-[53%] h-full flex flex-col justify-center pt-[100px] pl-[50px]">
         <div className="-z-10 absolute w-[1000px] h-[500px] transform-gpu translate-x-[-200px] translate-y-[150px] origin-left -rotate-[45deg] rounded-[650px] overflow-hidden ">
           <div className=" w-full h-full bg-[url('/images/hero-background.png')] bg-cover"></div>
         </div>
@@ -33,11 +33,13 @@ export const Hero: FC = () => {
             </button>
           ))}
         </div>
-        {activeTabInState === 'Need Stylist' ? (
-          <HeroLeftSideNS />
-        ) : (
-          <HeroLeftSidePS />
-        )}
+        <div>
+          {activeTabInState === 'Need Stylist' ? (
+            <HeroLeftSideNS />
+          ) : (
+            <HeroLeftSidePS />
+          )}
+        </div>
       </div>
       {activeTabInState === 'Need Stylist' ? (
         <HeroRightSideNS />

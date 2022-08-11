@@ -8,11 +8,16 @@ export const HeroRightSideNS = () => {
   return (
     <>
       <motion.div
-        initial={{ y: -300, opacity: 0 }}
+        initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 300, opacity: 0 }}
+        transition={{
+          delay: 0.3,
+          type: 'spring',
+          stiffness: 300,
+        }}
         className=" w-[47%] pt-[40px] h-full flex flex-col items-end justify-start ml-[10px]">
-        <div className="relative h-fit pt-0 mb-6 flex items-end justify-start w-full">
+        <motion.div className="relative h-fit pt-0 mb-6 flex items-end justify-start w-full">
           <div>
             <Image
               src="/images/hero-1.png"
@@ -40,7 +45,7 @@ export const HeroRightSideNS = () => {
               loading={'lazy'}
             />
           </div>
-        </div>
+        </motion.div>
         <div className="bg-[url('/images/hero-background.png')] bg-white bg-cover shadow rounded-2xl w-[100%] max-w-[520px] h-[298px] flex flex-col gap-7 justify-evenly p-4 mx-auto">
           <div className="flex flex-col gap-4">
             <Search />

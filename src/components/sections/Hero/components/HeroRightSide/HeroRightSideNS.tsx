@@ -3,6 +3,7 @@ import React from 'react';
 import { ButtonMolecule, Size } from '../../../../shared/Button/Button';
 import { Search } from '../Search/Search';
 import { motion } from 'framer-motion';
+import { Countries } from '../CountrySelector/CountrySelector';
 
 export const HeroRightSideNS = () => {
   return (
@@ -49,7 +50,7 @@ export const HeroRightSideNS = () => {
         <div className="bg-[url('/images/hero-background.png')] bg-white bg-cover shadow rounded-2xl w-[100%] max-w-[520px] h-[298px] flex flex-col gap-7 justify-evenly p-4 mx-auto">
           <div className="flex flex-col gap-4">
             <Search />
-            <Search />
+            <Countries />
           </div>
           <ButtonMolecule size={Size.FULL} text="Search" type="button" />
         </div>

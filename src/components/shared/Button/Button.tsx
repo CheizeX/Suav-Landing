@@ -4,6 +4,7 @@ import React from 'react';
 
 import { FC, MouseEventHandler } from 'react';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export enum Size {
   SMALL = 'SMALL',
@@ -132,7 +133,7 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
   }
 `;
 
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled(motion.button)<ButtonProps>`
   position: relative;
   flex: 1 1 auto;
   text-align: center;
@@ -194,6 +195,9 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
 }) => {
   return (
     <StyledButton
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1 }}
+      transition={{ duration: 0.01 }}
       type={type}
       variant={variant}
       size={size}

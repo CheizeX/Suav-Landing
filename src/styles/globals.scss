@@ -12,6 +12,9 @@
     font-style: normal;
   }
 }
+input[type='text']:focus {
+  box-shadow: none;
+}
 
 html,
 body {
@@ -55,6 +58,12 @@ a {
   margin-right: 3px;
   position: relative;
   bottom: 1px;
+}
+
+.hero-right_image-background {
+  background: transparent linear-gradient(135deg, #ff00ff 0%, #05efff 100%) 0%
+    0% no-repeat padding-box;
+  // opacity 0.3 to the background
 }
 
 .overflowHideScroll {
@@ -233,75 +242,33 @@ a {
   }
 }
 
-.bgmio {
-  background-image: linear-gradient(
-      67.5deg,
-      rgb(6, 6, 6) 0%,
-      rgb(6, 6, 6) 6%,
-      rgb(29, 29, 29) 6%,
-      rgb(29, 29, 29) 57%,
-      rgb(52, 52, 52) 57%,
-      rgb(52, 52, 52) 58%,
-      rgb(75, 75, 75) 58%,
-      rgb(75, 75, 75) 79%,
-      rgb(97, 97, 97) 79%,
-      rgb(97, 97, 97) 93%,
-      rgb(120, 120, 120) 93%,
-      rgb(120, 120, 120) 95%,
-      rgb(143, 143, 143) 95%,
-      rgb(143, 143, 143) 100%
-    ),
-    linear-gradient(
-      138deg,
-      rgb(6, 6, 6) 0%,
-      rgb(6, 6, 6) 6%,
-      rgb(29, 29, 29) 6%,
-      rgb(29, 29, 29) 57%,
-      rgb(52, 52, 52) 57%,
-      rgb(52, 52, 52) 58%,
-      rgb(75, 75, 75) 58%,
-      rgb(75, 75, 75) 79%,
-      rgb(97, 97, 97) 79%,
-      rgb(97, 97, 97) 93%,
-      rgb(120, 120, 120) 93%,
-      rgb(120, 120, 120) 95%,
-      rgb(143, 143, 143) 95%,
-      rgb(143, 143, 143) 100%
-    ),
-    linear-gradient(
-      183deg,
-      rgb(6, 6, 6) 0%,
-      rgb(6, 6, 6) 6%,
-      rgb(29, 29, 29) 6%,
-      rgb(29, 29, 29) 57%,
-      rgb(52, 52, 52) 57%,
-      rgb(52, 52, 52) 58%,
-      rgb(75, 75, 75) 58%,
-      rgb(75, 75, 75) 79%,
-      rgb(97, 97, 97) 79%,
-      rgb(97, 97, 97) 93%,
-      rgb(120, 120, 120) 93%,
-      rgb(120, 120, 120) 95%,
-      rgb(143, 143, 143) 95%,
-      rgb(143, 143, 143) 100%
-    ),
-    linear-gradient(
-      48deg,
-      rgb(6, 6, 6) 0%,
-      rgb(6, 6, 6) 6%,
-      rgb(29, 29, 29) 6%,
-      rgb(29, 29, 29) 57%,
-      rgb(52, 52, 52) 57%,
-      rgb(52, 52, 52) 58%,
-      rgb(75, 75, 75) 58%,
-      rgb(75, 75, 75) 79%,
-      rgb(97, 97, 97) 79%,
-      rgb(97, 97, 97) 93%,
-      rgb(120, 120, 120) 93%,
-      rgb(120, 120, 120) 95%,
-      rgb(143, 143, 143) 95%,
-      rgb(143, 143, 143) 100%
-    ),
-    linear-gradient(138deg, rgb(8, 8, 8), rgb(224, 0, 224));
-  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: 40px 0;
+  margin-right: 20px;
+}
+
+.text-placeholder {
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 20px;
+  height: 35px;
+  flex: 1;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

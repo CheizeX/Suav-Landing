@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const HeroRightSidePS = () => {
   return (
@@ -9,16 +10,16 @@ export const HeroRightSidePS = () => {
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -300, opacity: 0 }}
         transition={{ delay: 0.3 }}
-        className=" min-h-[565px] bg-black pt-24 mb-6 w-full rounded-bl-[264px] ">
-        {/* <Image
+        className=" min-h-[640px] min-w-[640px] relative flex mb-6 w-full rounded-bl-[264px] hero-right_image-background">
+        <Image
           src="/images/set.jpg"
           width={'640'}
           height={'640'}
           alt="logo"
           loading={'lazy'}
           objectFit="fill"
-          className=" rounded-bl-[264px]"
-        /> */}
+          className=" rounded-bl-[264px] opacity-[0.3] "
+        />
       </motion.div>
     </div>
   );

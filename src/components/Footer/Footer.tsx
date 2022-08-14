@@ -6,7 +6,10 @@ import { BsInstagram } from 'react-icons/bs';
 
 export const Footer: FC = () => {
   return (
-    <div className="bg-[#004B50] w-screen h-[410px] flex items-center justify-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="bg-[#004B50] w-screen h-[410px] flex items-center justify-center">
       <div className="bg-[#004B50] w-full h-[410px] max-w-[1366px]  flex flex-col">
         <div className=" h-[320px] flex pt-[65px] ">
           <div className=" w-[30%] text-right flex flex-col">
@@ -71,6 +74,6 @@ export const Footer: FC = () => {
           © 2021 Suavbeauty. All Rights Reserved
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

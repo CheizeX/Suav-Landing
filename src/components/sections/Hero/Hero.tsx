@@ -13,11 +13,11 @@ export const Hero: FC = () => {
 
   return (
     <section className=" min-h-[758px] pt-[75px] w-screen max-w-[1366px] flex justify-between items-start overflow-hidden">
-      <div className="relative w-[53%] h-full flex flex-col justify-center pt-[100px] pl-[50px]">
-        <div className="-z-10 absolute w-[1000px] h-[500px] transform-gpu translate-x-[-200px] translate-y-[150px] origin-left -rotate-[45deg] rounded-[650px] overflow-hidden ">
+      <div className=" relative w-[53%] h-full min-h-[580px] flex flex-col justify-center pt-[100px] pl-[50px]">
+        <div className=" -z-10 absolute w-[1000px] h-[600px] min-h-[600px] transform-gpu translate-x-[-200px] translate-y-[150px] origin-left -rotate-[45deg] rounded-[650px] overflow-hidden ">
           <div className=" w-full h-full bg-[url('/images/hero-background.png')] bg-cover"></div>
         </div>
-        <div className="w-[340px] h-[57px] flex justify-around items-center rounded-[10px] bg-gray_1">
+        <div className="absolute top-24 w-[340px] h-[57px] flex justify-around items-center rounded-[10px] bg-gray_1">
           {['Need Stylist', 'Provide Service'].map((item) => (
             <button
               key={item}

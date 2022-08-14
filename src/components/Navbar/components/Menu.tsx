@@ -58,6 +58,7 @@ export const Menu = () => {
           maxWidth: '500px',
           minWidth: '320px',
           height: '100vh',
+          maxHeight: '100vh',
           background: 'white',
           boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
         }}

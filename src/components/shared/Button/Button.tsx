@@ -101,7 +101,6 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
     -webkit-text-fill-color: transparent;
   }
   &:hover {
-    transition: all 1s ease-in-out;
     @keyframes animatedgradient {
       0% {
         background-position: 0% 50%;
@@ -137,7 +136,7 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
   position: relative;
   flex: 1 1 auto;
   text-align: center;
-  transition: 0.5s;
+  transition: 0.3s;
   background-size: 100% auto;
   color: white;
   border-radius: 10px;
@@ -195,9 +194,9 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
 }) => {
   return (
     <StyledButton
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 1 }}
-      transition={{ duration: 0.01 }}
+      transition={{ duration: 0.03 }}
       type={type}
       variant={variant}
       size={size}

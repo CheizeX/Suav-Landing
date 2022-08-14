@@ -31,7 +31,7 @@ export const MenuToggle: FC<Props> = ({ toggle }) => (
       justifyContent: 'center',
       alignItems: 'center',
     }}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <svg width="84" height="28" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: 'M 2 2.5 L 20 2.5' },

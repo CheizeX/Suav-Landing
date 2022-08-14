@@ -6,7 +6,7 @@ import { Menu } from './components/Menu';
 
 export const Navbar: FC = () => {
   return (
-    <div className="w-screen flex min-w-[320px] justify-center shadow h-[75px] fixed top-0 left-0 z-30 bg-white">
+    <div className="w-screen flex min-w-[320px] max-width-[1366px] justify-center shadow h-[75px] fixed top-0 left-0 z-30 bg-white">
       <nav className="h-[75px] w-full min-w-[320px] max-w-[1366px] min-w[320px] px-[60px] p-[18px] flex justify-between items-center opacity-[0.96]">
         <motion.div
           initial={{ x: -300, opacity: 0 }}

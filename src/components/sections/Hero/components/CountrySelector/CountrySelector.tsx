@@ -5,11 +5,12 @@ import countryList from 'react-select-country-list';
 export const Countries: FC = () => {
   const [country, setCountry] = useState(null);
   const options = useMemo(() => countryList().getData(), []);
-  console.log(options);
+  console.log('[SELECTED COUNTRY]', country);
 
   const handleChange = (selectedCountry: any) => {
     setCountry(selectedCountry);
   };
+
   const colourStyles = {
     control: (styles: any, { isFocused, isSelected }: any) => {
       return {
@@ -22,13 +23,16 @@ export const Countries: FC = () => {
         fontSize: '14px',
         color: 'red',
         width: '100%',
-
+        outline: 'transparent',
         ...((isFocused || isSelected) && {
           color: '#FFF',
-          outline: '1px solid #D95AFF',
-          border: '1px solid #D95AFF',
-          '&:hover': {
-            boxShadow: 'none',
+          outline: '1px solid #FF00FF',
+          border: '1px solid #FF00FF',
+          boxShadow: '0px 0px 0px 1px #FF00FF',
+          ':hover': {
+            outline: '1px solid #FF00FF',
+            border: '1px solid #FF00FF',
+            boxShadow: '0px 0px 0px 1px #FF00FF',
           },
         }),
       };
@@ -39,14 +43,17 @@ export const Countries: FC = () => {
         color: 'black',
         fontSize: '12px',
         cursor: isDisabled ? 'not-allowed' : 'default',
+        outline: 'none',
         ...(isSelected && {
           backgroundImage: 'linear-gradient(98deg,#d95aff 0%,#05efff 100%)',
           color: '#FFF',
           opacity: '0.6',
+          outline: 'none',
         }),
         ...(isFocused && {
           backgroundImage: 'linear-gradient(98deg,#d95aff 0%,#05efff 100%)',
           color: '#FFF',
+          outline: 'none',
         }),
       };
     },
@@ -54,7 +61,6 @@ export const Countries: FC = () => {
   return (
     <Select
       placeholder="Select City"
-      // defaultValue={options[0]}
       styles={colourStyles}
       options={options}
       onChange={handleChange}

@@ -1,45 +1,48 @@
-import React, { FC, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { FC } from 'react';
+import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
 import { Comunity } from './components/Comunity';
 
 export const AdvantagesSection: FC = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  // const controls = useAnimation();
+  // const [ref, inView] = useInView();
 
-  const squareVariants = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-      },
+  // const squareVariants = {
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: {
+  //       duration: 1,
+  //     },
+  //   },
+  //   hidden: { opacity: 0, scale: 0 },
+  // };
+  0;
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start('visible');
+  //   }
+  // }, [controls, inView]);
+  const inViewOptions = {
+    opacity: 1,
+    x: [300, -100, 10, 0],
+    transition: {
+      duration: 1,
     },
-    hidden: { opacity: 0, scale: 0 },
   };
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
   return (
-    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6">
+    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6 pt-10">
       <h1 className=" w-full font-northwell text-[35px] text-btn_1 mb-3 ">
         Our advantages
       </h1>
       <div className=" w-full font-semibold text-[35px] text-gray_5">
         Why choose Suav?
       </div>
-      <div
-        ref={ref}
-        className="w-[full] h-[745px] bg-[#120507] my-[54px] rounded-[40px] flex flex-col items-end justify-between p-[40px] bgmio">
+      <div className="w-[full] h-[745px] bg-[#120507] my-[54px] rounded-[40px] flex flex-col items-end justify-between p-[40px] bgmio">
         <motion.div
-          animate={controls}
-          initial={{ x: 300, opacity: 0 }}
-          variants={squareVariants}
-          exit={{ x: 300, opacity: 0 }}
+          whileInView={inViewOptions}
+          exit={{ x: 0, opacity: 0 }}
           className="w-[60%] min-h-[190px] p-[24px] rounded-[35px] bg-gray_1 flex flex-col justify-evenly">
           <h3 className="text-[22px] text-gray_5 font-semibold">
             Discover & book stylists near you
@@ -51,10 +54,8 @@ export const AdvantagesSection: FC = () => {
           </div>
         </motion.div>
         <motion.div
-          animate={controls}
-          initial={{ x: 300, opacity: 0 }}
-          variants={squareVariants}
-          exit={{ x: 300, opacity: 0 }}
+          whileInView={inViewOptions}
+          exit={{ opacity: 0 }}
           className="w-[60%] min-h-[190px]  p-[24px] rounded-[35px] bg-gray_1 flex flex-col justify-evenly">
           <h3 className="text-[22px] text-gray_5 font-semibold">
             Say goodbye to inconsistent results
@@ -66,10 +67,8 @@ export const AdvantagesSection: FC = () => {
           </div>
         </motion.div>
         <motion.div
-          animate={controls}
-          initial={{ x: 300, opacity: 0 }}
-          variants={squareVariants}
-          exit={{ x: 300, opacity: 0 }}
+          whileInView={inViewOptions}
+          exit={{ x: 0, opacity: 0 }}
           className="w-[60%] min-h-[190px] p-[24px] rounded-[35px] bg-gray_1 flex flex-col justify-evenly">
           <h3 className="text-[22px] text-gray_5 font-semibold">
             Unlock opportunities doing what you love

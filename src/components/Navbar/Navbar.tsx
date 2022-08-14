@@ -47,7 +47,7 @@ export const Navbar: FC = () => {
           </div>
         </ul>
       </nav>
-      <div className="lg:hidden flex w-10 min-w-[70px]">
+      <div className="lg:hidden flex w-10 min-w-[70px] z-50">
         <Menu />
       </div>
     </div>

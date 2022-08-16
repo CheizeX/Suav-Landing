@@ -161,8 +161,6 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
   &:hover {
     background-size: 500% auto;
     background-position: right center;
-    ${({ size }) =>
-      size === Size.FULL ? `box-shadow: 0px 1px 3px 0px #b2b2b2;` : null}
   }
   &:active {
   }

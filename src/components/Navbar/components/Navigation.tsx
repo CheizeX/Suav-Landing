@@ -10,11 +10,13 @@ import {
 const variants = {
   open: {
     transition: { staggerChildren: 0.05, delayChildren: 0.4 },
-    display: 'flex',
+    // display: 'flex',
+    width: '100%',
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: 1 },
-    display: 'none',
+    // display: 'none',
+    width: '0px',
   },
 };
 
@@ -46,7 +48,7 @@ export const Navigation = () => (
         maxWidth: '500px',
         margin: '0',
         width: '100%',
-        // display: 'none',
+        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',

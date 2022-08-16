@@ -30,7 +30,9 @@ export const MenuItem: FC<Props> = ({ name }) => {
         marginBottom: '20px',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         cursor: 'pointer',
+        minWidth: '500px',
       }}
       variants={variants}
       whileHover={{ scale: 1.05 }}

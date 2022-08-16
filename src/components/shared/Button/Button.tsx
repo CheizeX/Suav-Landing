@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import React from 'react';
-
 import { FC, MouseEventHandler } from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -17,7 +16,6 @@ export enum Size {
 export enum ButtonState {
   NORMAL = 'NORMAL',
   DISABLED = 'DISABLED',
-  LOADING = 'LOADING',
 }
 
 export enum ButtonVariant {
@@ -31,7 +29,6 @@ export interface ButtonMoleculeProps {
   size?: Size;
   variant?: ButtonVariant;
   state?: ButtonState;
-  bgColor?: string;
   leftIcon?: () => JSX.Element;
   rightIcon?: () => JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -40,8 +37,6 @@ export interface ButtonMoleculeProps {
 export interface ButtonProps {
   variant?: ButtonVariant;
   size: Size;
-  bgColor?: string;
-  $loading: boolean;
 }
 
 export const LoadingLayer = styled.div`
@@ -54,29 +49,9 @@ export const LoadingLayer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  & * {
-    /* fill: ${({ theme }) => theme.Colors.grays[9]}; */
-  }
 `;
 
-const loadingCss = css<{ bgColor?: string }>`
-  & > * {
-    visibility: hidden;
-  }
-
-  & > ${LoadingLayer} {
-    visibility: visible;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 1;
-    background-color: ${({ bgColor }) =>
-      bgColor && bgColor !== '' ? bgColor : '#f5f5f5ac'};
-  }
-`;
-
-const outlinedButtonStyles = css<{ bgColor?: string }>`
+const outlinedButtonStyles = css`
   transition: all 0.2s ease-in-out;
   border-radius: 13px;
   border: solid 3px transparent;
@@ -117,7 +92,7 @@ const outlinedButtonStyles = css<{ bgColor?: string }>`
       transition: all 0.2s ease-in-out;
       background-origin: border-box;
       background-clip: border-box;
-      background: transparent linear-gradient(108deg, #05efff 0%, #ff00ff 100%)
+      background: transparent linear-gradient(108deg, #05efff 0%, #05efff 100%)
         0% 0% no-repeat padding-box;
       background-size: 100% auto;
       -webkit-background-clip: text;
@@ -176,7 +151,6 @@ export const StyledButton = styled(motion.button)<ButtonProps>`
 
   ${({ variant }) =>
     variant === ButtonVariant.OUTLINED ? outlinedButtonStyles : null}
-  ${({ $loading }) => ($loading ? loadingCss : null)}
 `;
 
 export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
@@ -185,7 +159,6 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
   size = Size.SMALL,
   variant = ButtonVariant.FILLED,
   state = ButtonState.NORMAL,
-  bgColor,
   leftIcon,
   rightIcon,
   onClick,
@@ -198,23 +171,11 @@ export const ButtonMolecule: FC<ButtonMoleculeProps> = ({
       type={type}
       variant={variant}
       size={size}
-      bgColor={bgColor ?? ''}
-      disabled={state === ButtonState.DISABLED || state === ButtonState.LOADING}
-      onClick={onClick ?? (() => {})}
-      $loading={state === ButtonState.LOADING}>
+      disabled={state === ButtonState.DISABLED ? true : false}
+      onClick={onClick ?? (() => {})}>
       {leftIcon && leftIcon()}
-      <span
-        color={
-          variant === ButtonVariant.OUTLINED ? bgColor || '#8520D0' : '#FFF'
-        }>
-        {text}
-      </span>
+      <span color={'#FFF'}>{text}</span>
       {rightIcon && rightIcon()}
-      {state === ButtonState.LOADING && (
-        <LoadingLayer>
-          {/* <SVGIcon color="#FFF" iconFile="/icons/button-loading.svg" /> */}
-        </LoadingLayer>
-      )}
     </StyledButton>
   );
 };

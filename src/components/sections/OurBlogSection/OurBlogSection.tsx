@@ -20,7 +20,7 @@ const StyledImageContainer = styled(motion.div)<Props>`
 export const OurBlogSection: FC<Props> = () => {
   const { activeTabInState } = useAppSelector((state) => state.ui);
   return (
-    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6 pt-[200px]">
+    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6 pt-[200px] overflow-hidden">
       <h1 className=" w-full font-northwell text-[35px] text-btn_1 mb-3 ">
         Our Blog
       </h1>

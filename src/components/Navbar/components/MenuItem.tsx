@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 interface Props {
-  i: any;
+  name: string;
 }
 const variants = {
   open: {
@@ -20,10 +20,7 @@ const variants = {
   },
 };
 
-const colors = ['#c700cb', '#FF00FF', '#d588ff', '#05e6ff', '#00bccc'];
-
-export const MenuItem: FC<Props> = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem: FC<Props> = ({ name }) => {
   return (
     <motion.li
       style={{
@@ -37,9 +34,10 @@ export const MenuItem: FC<Props> = ({ i }) => {
       }}
       variants={variants}
       whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}>
-      <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
+      whileTap={{ scale: 0.95 }}
+      className="min-w-fit hover:cursor-pointer hover:opacity-50 hover:text-turquoise active:opacity-100 text-gray_5"
+      onClick={() => console.log(`${name}`)}>
+      {name}
     </motion.li>
   );
 };

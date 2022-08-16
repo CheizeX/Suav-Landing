@@ -17,7 +17,7 @@ export const AdvantagesSection: FC = () => {
   //   },
   //   hidden: { opacity: 0, scale: 0 },
   // };
-  0;
+  // 0;
   // useEffect(() => {
   //   if (inView) {
   //     controls.start('visible');
@@ -32,7 +32,7 @@ export const AdvantagesSection: FC = () => {
   };
 
   return (
-    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6 pt-10">
+    <section className=" min-h-[458px] w-full max-w-[1366px] flex flex-col px-6 pt-10 overflow-hidden">
       <h1 className=" w-full font-northwell text-[35px] text-btn_1 mb-3 ">
         Our advantages
       </h1>

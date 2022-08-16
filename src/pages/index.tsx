@@ -16,7 +16,7 @@ const Home: NextPage<IFiltersProps> = () => {
         <title>SUAV BEAUTY LANDING</title>
         <meta name="description" content="landing page" />
       </Head>
-      <main className="container flex flex-col justify-start items-center w-screen min-w-[1080px] h-fit relative overflow-hidden">
+      <main className="container flex flex-col justify-start items-center w-screen min-w-[1080px]  h-fit relative ">
         <Navbar />
         <Hero />
         <SecondSection />

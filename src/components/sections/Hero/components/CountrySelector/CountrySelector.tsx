@@ -60,6 +60,8 @@ export const Countries: FC = () => {
   };
   return (
     <Select
+      id="country-select"
+      instanceId="country-select"
       placeholder="Select City"
       styles={colourStyles}
       options={options}

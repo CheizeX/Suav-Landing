@@ -21,10 +21,10 @@ const sidebar = {
     clipPath: 'circle(24px at calc(100% - 70px) 40px)',
 
     transition: {
-      delay: 0.1,
+      delay: 0.7,
       type: 'spring',
-      stiffness: 1000,
-      damping: 100,
+      stiffness: 500,
+      damping: 40,
     },
   }),
 };
